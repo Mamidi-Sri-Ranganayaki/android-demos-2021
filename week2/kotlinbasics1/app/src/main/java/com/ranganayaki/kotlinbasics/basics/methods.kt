@@ -28,7 +28,7 @@ fun defaultValues( // indentation would be like this
 
 infix fun Unit.sq(n: Int) = n * n
 
-fun multiple(vararg strs : String) { // variable arguments
+fun multiple(vararg strs: String) { // variable arguments
     println(strs.contentToString())
 }
 
