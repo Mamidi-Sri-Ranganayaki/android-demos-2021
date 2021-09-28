@@ -13,7 +13,6 @@ fun demo1() {
     intNums[2] = 9
     intNums[3] = 96
     intNums[4] = 47
-//    intNums[5] = 78
 
     println(intNums.contentToString())
 }
