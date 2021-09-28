@@ -1,0 +1,22 @@
+##KOTLIN BASICS
+
+---> Different areas of using kotlin
+    - Multiplatform Programming
+    - Kotlin Multiplatform Mobile
+    - Kotlin for Server side
+    - Kotlin for Android
+    - Kotlin for JavaScript
+    - Kotlin Native
+    - Kotlin for Data Science
+    - Kotlin for competitive programming
+
+- Step-1 : Open Project
+- Step-2 : Open the project path
+- Step-3 : Open app--->src--->main--->java
+- Step-4 : Right click on package--->new--->click on kotlin class/file--->name of the file.
+
+
+--->Kotlin says that concatenation is hevay
+- So to avoid we use "$" symbol
+- We can also perform mathematical operations directly in the print statements by using "$ and {}"
+- The value in the var can be changed but while in the val we cannot change the values
