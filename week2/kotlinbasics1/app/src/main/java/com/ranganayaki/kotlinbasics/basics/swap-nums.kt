@@ -6,6 +6,11 @@ fun main() {
     var b = "pqr"
     var c = "xyz"
 
+    println("--Before swap--")
+    println("a = $a")
+    println("b = $b")
+    println("c = $c")
+
     // Value of a is assigned to temporary
     val temporary = a
 
