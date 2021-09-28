@@ -1,6 +1,6 @@
 package com.ranganayaki.kotlinbasics.basics
 
-fun main(args: Array<String>) {
+fun main() {
 
     var a = "abc"
     var b = "pqr"
