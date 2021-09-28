@@ -6,13 +6,13 @@ fun main(args: Array<String>) {
     var b = "pqr"
     var c = "xyz"
 
-    // Value of first is assigned to temporary
+    // Value of a is assigned to temporary
     val temporary = a
 
-    // Value of second is assigned to first
+    // Value of c is assigned to a
     a = c
 
-    // Value of temporary (which contains the initial value of first) is assigned to second
+    // Value of temporary (which contains the initial value of a) is assigned to c
     c = temporary
 
     println("--After swap--")
