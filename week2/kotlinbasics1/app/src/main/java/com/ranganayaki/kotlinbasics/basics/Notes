@@ -21,3 +21,11 @@
 - So to avoid we use "$" symbol
 - We can also perform mathematical operations directly in the print statements by using "$ and {}"
 - The value in the var can be changed but while in the val we cannot change the values
+- Return type is always mentioned after COLON only
+
+
+##METHODS
+---> Using of Methods
+    - fun simple()----->returns int
+    - fun addition(), // While passing the parameters in the method we have to mention the return type
+    - Default return type is Unit = void in JAVA

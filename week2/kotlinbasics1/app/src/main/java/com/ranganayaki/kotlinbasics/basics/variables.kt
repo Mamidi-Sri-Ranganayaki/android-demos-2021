@@ -1,4 +1,4 @@
-package com.aniruddha.kudalkar.kotlinbasics.basics
+package com.ranganayaki.kotlinbasics.basics
 
 fun main() {
     var age = 10
