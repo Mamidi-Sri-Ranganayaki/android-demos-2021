@@ -1,3 +1,5 @@
 ## println("0 -> ${nums.get(0)}") -------> Printing the value by using index----->process1
 
 ## println("1 -> ${nums[1]}") -------> Printing the value by using index directly by mentioning the index position of the array in "[ ]"------>process2
+
+---->Primitive Array
