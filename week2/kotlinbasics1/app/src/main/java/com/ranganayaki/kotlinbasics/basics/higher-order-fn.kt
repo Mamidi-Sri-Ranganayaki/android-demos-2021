@@ -1,5 +1,13 @@
 package com.ranganayaki.kotlinbasics.basics
 
+/*
+Kotlin functions are first-class, which means they can be stored in variables and data structures,
+and can be passed as arguments to and returned from other higher-order functions.
+You can perform any operations on functions that are possible for other non-function values.
+To facilitate this, Kotlin, as a statically typed programming language, uses a family of function types
+to represent functions, and provides a set of specialized language constructs, such as lambda expressions.
+ */
+
 fun uploadFiles(
     files: Array<String>,
     fn: (st: String) -> Unit // function as parameter
@@ -11,7 +19,7 @@ fun uploadFiles(
 
     // notification for starting the processing ->
     fn("starting")
-    for ( file in files) { // right now forget about loop, we will see this separately
+    for (file in files) { // right now forget about loop, we will see this separately
         // we do some processing
         // during processing we need to notify
         Thread.sleep(1000) // not recommended to use
@@ -48,8 +56,8 @@ fun demo1() {
         fun(st: String, dt: Int, prc: Double): Int {
             return 10
         }
-    val fn10: (st: String, dt: Int, prc: Double) -> Int = { st, dt, prc  -> 10  }
-    val fn11: (st: String, dt: Int, prc: Double) -> Int = { _, dt, _ ->  10 * dt  }
+    val fn10: (st: String, dt: Int, prc: Double) -> Int = { st, dt, prc -> 10 }
+    val fn11: (st: String, dt: Int, prc: Double) -> Int = { _, dt, _ -> 10 * dt }
 }
 
 fun demo2() {
@@ -57,17 +65,17 @@ fun demo2() {
     // right now forget about array, we will see this separately
     val files = arrayOf("ajdf", "asdslfh", "akjfh", "alfj", "sdkdfkh", "sdldf", "sdlkfkdj")
 
-    val fn1 = fun(file : String) {
+    val fn1 = fun(file: String) {
         println("File Uploaded - $file")
     }
     uploadFiles(files, fn1)
-    uploadFiles(files, fun(file : String) {
+    uploadFiles(files, fun(file: String) {
         println("File Uploaded - $file")
     })
 
-    val fn2 = { file : String -> println(file)  }
+    val fn2 = { file: String -> println(file) }
     uploadFiles(files, fn2)
-    uploadFiles(files, { file : String -> println(file)  })
+    uploadFiles(files, { file: String -> println(file) })
     uploadFiles(files) { file: String ->
         println(file)
     }
