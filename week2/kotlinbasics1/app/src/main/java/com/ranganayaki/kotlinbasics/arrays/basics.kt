@@ -23,7 +23,7 @@ fun demo1() { // primitive array
 
     val intNums1 = IntArray(5) { 50 } // 5 element array, each initialized to 50
     val intNums2 = IntArray(5, { 50 })
-    val intNums3 = IntArray(5, fun( n : Int ): Int {
+    val intNums3 = IntArray(5, fun(n: Int): Int {
         return 50
     })
 
