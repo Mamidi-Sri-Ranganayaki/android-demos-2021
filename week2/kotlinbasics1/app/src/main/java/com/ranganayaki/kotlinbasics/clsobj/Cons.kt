@@ -26,44 +26,55 @@ class Cls3(nm: String) { // pass values to the constructor
         return name
     }
 }
+
 class Cls4(val name: String) { // pass and assign in one line
     fun whatYourName() = name
 }
 
 class Cls5 {
-    val dt : String // state -> property
+    val dt: String // state -> property
 
     constructor(d: String) { // secondary constructor
         dt = d // assigning value d to property dt
     }
 }
+
 /*
     If the class has a primary constructor, each secondary constructor needs to
     delegate to the primary constructor, either directly or indirectly through
     another secondary constructor(s). Delegation to another constructor of the
     same class is done using the this keyword
  */
-class Cls6(val dt : String) { // primary
-    val dt1 : String
-    constructor(d: String,  n: Int): this(d) {// secondary -> `this` will point to primary
+class Cls6(val dt: String) { // primary
+    val dt1: String
+
+    constructor(d: String, n: Int) : this(d) {// secondary -> `this` will point to primary
         // here d is for satisfying primary constructor
         // integer n is used to perform some logic
         println("called secondary 1")
     }
-    constructor(d: String,  n: Double): this(d) {// secondary -> `this` will point to primary
+
+    constructor(d: String, n: Double) : this(d) {// secondary -> `this` will point to primary
         // here d is for satisfying primary constructor
         // double n is used to perform some logic
         println("called secondary 2")
     }
-    constructor(d: String,  n: Double, b : Boolean): this(d) {// secondary -> `this` will point to primary
+
+    constructor(
+        d: String,
+        n: Double,
+        b: Boolean
+    ) : this(d) {// secondary -> `this` will point to primary
         // here d is for satisfying primary constructor
         // double n is used to perform some logic
         println("called secondary 2")
     }
+
     init {
         println("Called init 1 ${dt}")
         dt1 = "sasdaklfjksjfjd"
     }
+
     init {
         println("Called init 2 $dt")
     }
