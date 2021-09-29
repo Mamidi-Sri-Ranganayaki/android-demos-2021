@@ -1,6 +1,6 @@
 package com.ranganayaki.kotlinbasics.basics
 
-typealias SimpleFunction = (n : Int) -> String
+typealias SimpleFunction = (n: Int) -> String
 
 fun someObj() = object { // inline function returning object
     var dt = 10
@@ -49,8 +49,8 @@ fun outer(): (n1: Int) -> String {
     }
 }
 
-fun outer2(): SimpleFunction {
-    return fun ( n : Int ) : String {
+fun outer2(): SimpleFunction { // instead of writing complete (n : Int) -> String just write SimpleFunction
+    return fun(n: Int): String {
         return "aliaadfdasdfsafsafdsafs"
     }
 }
