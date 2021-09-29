@@ -17,6 +17,6 @@ fun main() {
 
     println("String = " + sr + " Double = " + dbl) // string concatenation
     println("\n String = $sr \n Double = $dbl \n Float = ${flt} \n Boolean = ${bln} ") // string interpolation
-    println("\n Addition = ${ 10 + 20 } ")
-    println("\n Square Root = ${ Math.sqrt(25.6) } ")
+    println("\n Addition = ${10 + 20} ")
+    println("\n Square Root = ${Math.sqrt(25.6)} ")
 }
