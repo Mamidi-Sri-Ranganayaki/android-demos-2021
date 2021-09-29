@@ -23,5 +23,9 @@ fun demo2() {
 }
 
 fun main() {
+    println("Enter your Android Version")
+    demo1()
+    println("Enter your Android Version")
+    demo2()
 
 }
