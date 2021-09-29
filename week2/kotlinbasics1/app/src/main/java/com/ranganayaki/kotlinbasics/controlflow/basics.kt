@@ -1,5 +1,9 @@
 package com.ranganayaki.kotlinbasics.controlflow
 
+import java.util.Scanner
+import java.util.Date as Dt
+
+
 // for taking input you can use
 // - scanner from java
 // - use kotlins native feature readLine -> you read string
@@ -8,7 +12,7 @@ fun demo1() {
     println("Enter The OS : ")
     val os = readLine() // take input from user
     var st = ""
-    if(os.equals("10")) {
+    if (os.equals("10")) {
         println("Oreo")
         st = "oreo"
     } else if (os.equals("9")) {
@@ -23,7 +27,7 @@ fun demo1() {
 fun demo2() {
     println("Enter The OS : ")
     val os = readLine() // take input from user
-    when(os) {
+    when (os) {
         "10" -> println("Oreo")
         "9" -> print("Pie")
         "8", "7" -> println("Jelly Bean")
@@ -35,8 +39,8 @@ fun demo3() {
     println("Enter Name")
     val nm = readLine()
 
-    val info = if(nm.equals("android")) 11 else 30
-    val dt = when(nm){
+    val info = if (nm.equals("android")) 11 else 30
+    val dt = when (nm) {
         "123" -> 123
         else -> 23
     }
@@ -46,10 +50,16 @@ fun demo3() {
 
 fun demo4() {
     val safeNums = intArrayOf(45, 89, 50)
+    val d = Dt()
 
-    val num = 10
+    val `when` = 10
+    println("When is ${`when`}")
 
-    when(num) {
+    val sc = Scanner(System.`in`)
+    println("Enter your Number")
+    val num = sc.nextInt()
+
+    when (num) {
         in 1..10 -> println("it is in range")
         !in 96..100 -> println("it is not in safe range")
         in safeNums -> println("it is in safe range")
@@ -58,4 +68,5 @@ fun demo4() {
 }
 
 fun main() {
+    demo4()
 }
