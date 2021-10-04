@@ -78,12 +78,13 @@ private suspend fun demoCoScp() {
 
 private fun job1() {
     runBlocking {
+
         val job = launch {
             delay(1500)
             println("World")
         }
         println("hello")
-//        job.cancel()
+//        job.cancel("some message")
 //        job.join() // until job is complete wait here
 
         job.cancelAndJoin()
@@ -91,6 +92,17 @@ private fun job1() {
     }
 }
 
+private fun job2() {
+    runBlocking {
+        launch { // context of the parent, main runBlocking coroutine
+            println("main runBlocking      : I'm working in thread -> ${Thread.currentThread().name}")
+        }
+        launch(Dispatchers.Default) { // will get dispatched to DefaultDispatcher
+            println("Default               : I'm working in thread ->  ${Thread.currentThread().name}")
+        }
+    }
+}
+
 fun main() {
-    job1()
+    job2()
 }
