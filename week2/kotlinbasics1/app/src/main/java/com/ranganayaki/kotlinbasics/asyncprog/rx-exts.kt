@@ -27,7 +27,7 @@ private fun obs1() {
     }
 
     obs
-        .observeOn(AndroidSchedulers.mainThread()) // kindly observer on main thread
+        //.observeOn(AndroidSchedulers.mainThread()) // kindly observer on main thread
         .subscribeOn(Schedulers.computation()) // subscribe on worker thread
         .doOnNext { str -> println(str) } // it will be called when observer calls onNext
         .doOnError { th -> println(th.toString()) } // it will be called when observer calls onError
