@@ -3,7 +3,12 @@ package com.ranganayaki.kotlinbasics.asyncprog
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.schedulers.Schedulers
+import io.reactivex.rxjava3.subjects.BehaviorSubject
+import io.reactivex.rxjava3.subjects.PublishSubject
 import java.util.concurrent.TimeUnit
+import java.util.concurrent.atomic.AtomicBoolean
+import java.util.concurrent.atomic.AtomicInteger
+import javax.security.auth.Subject
 
 /*
 implementation 'io.reactivex.rxjava3:rxkotlin:3.0.0'
@@ -27,7 +32,7 @@ private fun obs1() {
     }
 
     obs
-        //.observeOn(AndroidSchedulers.mainThread()) // kindly observer on main thread
+        .observeOn(AndroidSchedulers.mainThread()) // kindly observer on main thread
         .subscribeOn(Schedulers.computation()) // subscribe on worker thread
         .doOnNext { str -> println(str) } // it will be called when observer calls onNext
         .doOnError { th -> println(th.toString()) } // it will be called when observer calls onError
@@ -36,12 +41,26 @@ private fun obs1() {
 }
 
 private fun obs2() {
+
+    val atBl = AtomicBoolean(true)
+
     Observable.interval(1300, TimeUnit.MILLISECONDS)
-        .subscribeOn(Schedulers.computation())
-        .doOnNext { println(it) }
+//            .subscribeOn(Schedulers.computation())
+//        .observeOn(Schedulers.io())
+        .takeWhile { atBl.get() }
+        // interval operator will work until cond is true
+        .doOnNext {
+            atBl.set(it < 10)
+        }
 //        .doOnError {  }
 //        .doOnComplete {  }
         .subscribe()
+
+
+    while (atBl.get()){
+        println(atBl.get())
+    } // -> there operator which continue until condition is met
+
 
     /*Observable.interval(1300, TimeUnit.MILLISECONDS)
         .subscribe(
@@ -51,6 +70,20 @@ private fun obs2() {
         )*/
 }
 
+private fun obs3() {
+    val obs = Observable.just("android", "iOS", "linux")
+
+    obs.map { it.uppercase() } // transform item emitted by observable to another item
+        .doOnNext { println(it) }
+        .subscribe()
+
+    obs.flatMap { Observable.just(it.uppercase()) } // transform item emitted by observable to another observable
+        .doOnNext { println(it) }
+        .subscribe()
+
+    while (true) { }
+}
+
 fun main() {
-    obs2()
+    obs3()
 }
