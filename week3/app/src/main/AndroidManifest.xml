@@ -9,9 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidBasics">
+
+
         <activity
             android:name=".ResponsiveActivity"
-            android:exported="true" >
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
         <activity
@@ -22,14 +29,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".ConstraintExplanationActivity"
             android:exported="true" />
         <activity
             android:name=".LifecycleActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".CalculatorActivity"
             android:exported="true" />
