@@ -2,4 +2,8 @@
     <string name="app_name">AndroidBasics</string>
     <string name="welcome_message">Welcome to Android App</string>
     <string name="inv_num">Invoice Number</string>
+    <string name="item">Item</string>
+    <string name="qty">Quantity</string>
+    <string name="unit_price">Unit Price</string>
+    <string name="generate">Generate</string>
 </resources>
