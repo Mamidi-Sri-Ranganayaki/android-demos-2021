@@ -4,16 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F4F0F0"
     tools:context=".ResponsiveActivity">
 
     <TextView
         android:id="@+id/txtDt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="187dp"
+        android:layout_height="34dp"
         android:layout_marginStart="176dp"
         android:layout_marginTop="142dp"
         android:layout_marginEnd="177dp"
-        android:text="Hello to Web App"
+        android:background="#909FAC"
+        android:paddingStart="10dp"
+        android:text="@string/welcome_message"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
