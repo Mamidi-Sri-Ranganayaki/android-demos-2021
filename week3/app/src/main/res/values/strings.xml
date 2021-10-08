@@ -5,5 +5,6 @@
     <string name="item">Item</string>
     <string name="qty">Quantity</string>
     <string name="unit_price">Unit Price</string>
-    <string name="generate">Generate</string>
+    <string name="size">size</string>
+    <string name="number">Number</string>
 </resources>
