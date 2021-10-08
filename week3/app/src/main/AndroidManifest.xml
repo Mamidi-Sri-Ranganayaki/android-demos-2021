@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidBasics">
         <activity
-            android:name=".DependentUiActivity"
+            android:name=".AgeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,13 +19,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".DependentUiActivity"
+            android:exported="true" />
+        <activity
             android:name=".MotionLayoutActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".AsyncUiActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".InvoiceActivity"
             android:exported="true" />
