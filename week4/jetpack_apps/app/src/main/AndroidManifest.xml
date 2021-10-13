@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.ranganayaki.jetpackapps">
 
     <application
@@ -10,23 +11,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JetpackApps">
         <activity
-            android:name=".archcomp.DbDemoFragment"
-            android:exported="true" />
+            android:name=".archcomp.LvDtVwMdlActivity"
+            android:exported="true" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
         <activity
-            android:name=".archcomp.VmDemoFragment"
-            android:exported="true" />
+            android:name=".archcomp.DbDemoFragment"
+            android:exported="true"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".archcomp.DbDemoActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="true" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".archcomp.VmDemoActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
