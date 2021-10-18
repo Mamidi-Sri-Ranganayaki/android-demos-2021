@@ -6,10 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ranganayaki.myapplication.R
-
+import io.reactivex.rxjava3.internal.disposables.DisposableHelper.replace
 
 class RecGrdFragment : Fragment() {
 
@@ -18,6 +20,9 @@ class RecGrdFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        activity?.title="Dashboard"
+
         return inflater.inflate(R.layout.fragment_rec_grd, container, false)
     }
 
@@ -49,10 +54,26 @@ class RecGrdFragment : Fragment() {
 
         adapter.itemClick.observe(viewLifecycleOwner) {
             when (it.menu) {
-                "Home" -> Log.i("@ani", "Home Clicked")
+                "Home" -> activity?.supportFragmentManager?.commit {
+                    replace<RecHomeFragment>(R.id.fragmentContainerView)
+                    addToBackStack("RecHomeFragment")
+                }
+                "Admin" ->  activity?.supportFragmentManager?.commit {
+                    replace<RecAdminFragment>(R.id.fragmentContainerView)
+                    addToBackStack("RecHomeFragment")
+                }
+                "Settings" -> activity?.supportFragmentManager?.commit {
+                    replace<RecSettingsFragment>(R.id.fragmentContainerView)
+                    addToBackStack("RecSettingsFragment")
+                }
+                else -> activity?.supportFragmentManager?.commit {
+                    replace<RecProfileFragment>(R.id.fragmentContainerView)
+                    addToBackStack("RecProfileFragment")
+                }
+                /*"Home" -> Log.i("@ani", "Home Clicked")
                 "Admin" -> Log.i("@ani", "Admin Clicked")
                 "Settings" -> Log.i("@ani", "Settings Clicked")
-                else -> Log.i("@ani", "Profile Clicked")
+                else -> Log.i("@ani", "Profile Clicked")*/
             }
         }
         recDsh.adapter = adapter
