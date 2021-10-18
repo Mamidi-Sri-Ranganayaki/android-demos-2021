@@ -1,6 +1,7 @@
 package com.ranganayaki.myapplication.recgrd
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -28,8 +29,7 @@ class RecGrdFragment : Fragment() {
             requireContext(),
             2
         )
-
-        recDsh.adapter = RecDshAdapter(
+        val adapter = RecDshAdapter(
             requireContext(),
             listOf(
                 RecDsh("Home", R.drawable.ic_ph),
@@ -38,5 +38,23 @@ class RecGrdFragment : Fragment() {
                 RecDsh("Profile", R.drawable.ic_pff)
             )
         )
+        /**adapter.itemClick.subscribe {
+        when (it.menu) {
+        "Home" -> Log.i("@ani", "Home Clicked")
+        "Admin" -> Log.i("@ani", "Admin Clicked")
+        "Settings" -> Log.i("@ani", "Settings Clicked")
+        else -> Log.i("@ani", "Profile Clicked")
+        }
+        }*/
+
+        adapter.itemClick.observe(viewLifecycleOwner) {
+            when (it.menu) {
+                "Home" -> Log.i("@ani", "Home Clicked")
+                "Admin" -> Log.i("@ani", "Admin Clicked")
+                "Settings" -> Log.i("@ani", "Settings Clicked")
+                else -> Log.i("@ani", "Profile Clicked")
+            }
+        }
+        recDsh.adapter = adapter
     }
 }
