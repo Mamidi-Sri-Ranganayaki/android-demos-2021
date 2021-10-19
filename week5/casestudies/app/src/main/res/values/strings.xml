@@ -23,5 +23,8 @@
     <string name="name">Name</string>
     <string name="email">Email</string>
     <string name="age">Age</string>
+    <string name="view_transactions">View Transactions</string>
+    <string name="send_money">Send Money</string>
+    <string name="view_balance">View Balance</string>
 
 </resources>
