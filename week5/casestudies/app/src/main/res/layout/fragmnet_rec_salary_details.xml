@@ -28,7 +28,6 @@
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/basic_salary"
-            android:hintTextColor="#757575"
             android:inputType="numberDecimal"
             android:onTextChanged="@{ (txt, st, ed, cn) -> vm.onBasicSalaryChanged(txt.toString()) }"
             app:layout_constraintEnd_toEndOf="parent"
