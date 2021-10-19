@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".oldnav.OldNavActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
             android:name=".fabact.FabActivity"
             android:exported="true"
             android:label="@string/title_activity_fab"
@@ -23,6 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

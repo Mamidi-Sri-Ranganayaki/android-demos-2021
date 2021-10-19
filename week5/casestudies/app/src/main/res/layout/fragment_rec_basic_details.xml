@@ -26,13 +26,15 @@
             android:layout_marginTop="52dp"
             android:layout_marginEnd="16dp"
             android:ems="10"
+            android:hint="@string/name"
             android:inputType="textPersonName"
-            android:hint="Name"
+            android:minHeight="48dp"
+            android:onTextChanged="@{ (txt, st, ed, cn) -> vm.onNameChanged(txt.toString()) }"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:onTextChanged="@{ (txt, st, ed, cn) -> vm.onNameChanged(txt.toString()) }"/>
+            android:autofillHints="" />
 
 
         <EditText
@@ -43,12 +45,14 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:ems="10"
+            android:hint="@string/mobile"
             android:inputType="phone"
-            android:hint="Mobile"
+            android:minHeight="48dp"
+            android:onTextChanged="@{ (txt, st, ed, cn) -> vm.onMobileChanged(txt.toString()) }"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-            android:onTextChanged="@{ (txt, st, ed, cn) -> vm.onMobileChanged(txt.toString()) }"/>
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/editTextNumberSigned"
@@ -58,12 +62,14 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:ems="10"
+            android:hint="@string/age"
             android:inputType="numberSigned"
-            android:hint="Age"
+            android:minHeight="48dp"
+            android:onTextChanged="@{ (txt, st, ed, cn) -> vm.onAgeChanged(txt.toString()) }"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
-            android:onTextChanged="@{ (txt, st, ed, cn) -> vm.onAgeChanged(txt.toString()) }"/>
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/editTextTextEmailAddress"
@@ -73,19 +79,21 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:ems="10"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
-            android:hint="Email"
+            android:minHeight="48dp"
+            android:onTextChanged="@{ (txt, st, ed, cn) -> vm.onEmailChanged(txt.toString()) }"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextNumberSigned"
-            android:onTextChanged="@{ (txt, st, ed, cn) -> vm.onEmailChanged(txt.toString()) }" />
+            android:autofillHints="" />
 
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="Save"
+            android:text="@string/save"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
