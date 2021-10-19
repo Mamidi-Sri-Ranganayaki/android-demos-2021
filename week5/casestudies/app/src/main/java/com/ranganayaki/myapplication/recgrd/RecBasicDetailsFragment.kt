@@ -7,9 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
-import com.ranganayaki.myapplication.MainActivity
 import com.ranganayaki.myapplication.R
 import com.ranganayaki.myapplication.databinding.FragmentRecBasicDetailsBinding
 
