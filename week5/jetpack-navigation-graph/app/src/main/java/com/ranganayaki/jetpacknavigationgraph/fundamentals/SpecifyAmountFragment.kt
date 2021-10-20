@@ -1,4 +1,4 @@
-package com.ranganayaki.jetpacknavigationgraph
+package com.ranganayaki.jetpacknavigationgraph.fundamentals
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.ranganayaki.jetpacknavigationgraph.R
 import com.ranganayaki.jetpacknavigationgraph.databinding.FragmentSpecifyAmountBinding
 
 class SpecifyAmountFragment : Fragment() {

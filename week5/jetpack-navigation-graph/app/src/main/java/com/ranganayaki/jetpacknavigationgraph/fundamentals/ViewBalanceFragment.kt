@@ -1,4 +1,4 @@
-package com.ranganayaki.jetpacknavigationgraph
+package com.ranganayaki.jetpacknavigationgraph.fundamentals
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

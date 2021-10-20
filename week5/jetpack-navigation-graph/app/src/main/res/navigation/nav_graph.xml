@@ -6,7 +6,7 @@
     app:startDestination="@id/mainFragment">
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.ranganayaki.jetpacknavigationgraph.MainFragment"
+        android:name="com.ranganayaki.jetpacknavigationgraph.fundamentals.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -24,13 +24,8 @@
             app:destination="@id/viewBalanceFragment" />
     </fragment>
     <fragment
-        android:id="@+id/viewTxnFragment"
-        android:name="com.ranganayaki.jetpacknavigationgraph.ViewTxnFragment"
-        android:label="fragment_view_txn"
-        tools:layout="@layout/fragment_view_txn" />
-    <fragment
         android:id="@+id/chooseRecipientFragment"
-        android:name="com.ranganayaki.jetpacknavigationgraph.ChooseRecipientFragment"
+        android:name="com.ranganayaki.jetpacknavigationgraph.fundamentals.ChooseRecipientFragment"
         android:label="fragment_choose_recipient"
         tools:layout="@layout/fragment_choose_recipient" >
         <action
@@ -39,12 +34,12 @@
     </fragment>
     <fragment
         android:id="@+id/viewBalanceFragment"
-        android:name="com.ranganayaki.jetpacknavigationgraph.ViewBalanceFragment"
+        android:name="com.ranganayaki.jetpacknavigationgraph.fundamentals.ViewBalanceFragment"
         android:label="fragment_view_balance"
         tools:layout="@layout/fragment_view_balance" />
     <fragment
         android:id="@+id/specifyAmountFragment"
-        android:name="com.ranganayaki.jetpacknavigationgraph.SpecifyAmountFragment"
+        android:name="com.ranganayaki.jetpacknavigationgraph.fundamentals.SpecifyAmountFragment"
         android:label="fragment_specify_amount"
         tools:layout="@layout/fragment_specify_amount" >
         <action
@@ -56,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/confirmationFragment"
-        android:name="com.ranganayaki.jetpacknavigationgraph.ConfirmationFragment"
+        android:name="com.ranganayaki.jetpacknavigationgraph.fundamentals.ConfirmationFragment"
         android:label="fragment_confirmation"
         tools:layout="@layout/fragment_confirmation" >
         <argument
@@ -66,6 +61,11 @@
             android:name="amt"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/viewTxnFragment"
+        android:name="com.ranganayaki.jetpacknavigationgraph.fundamentals.ViewTxnFragment"
+        android:label="fragment_view_txn"
+        tools:layout="@layout/fragment_view_txn" />
 
 
 </navigation>
