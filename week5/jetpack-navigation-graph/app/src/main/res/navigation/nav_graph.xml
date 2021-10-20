@@ -14,7 +14,11 @@
             app:destination="@id/viewTxnFragment" />
         <action
             android:id="@+id/action_mainFragment_to_chooseRecipientFragment"
-            app:destination="@id/chooseRecipientFragment" />
+            app:destination="@id/chooseRecipientFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"/>
         <action
             android:id="@+id/action_mainFragment_to_viewBalanceFragment"
             app:destination="@id/viewBalanceFragment" />
