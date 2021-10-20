@@ -30,7 +30,10 @@ class ChooseRecipientFragment : Fragment() {
 
         binding.button4.setOnClickListener {
             val nm = binding.editTextTextPersonName.text.toString()
-            val action = ChooseRecipientFragmentDirections.actionChooseRecipientFragmentToSpecifyAmountFragment(nm)
+            val action =
+                ChooseRecipientFragmentDirections.actionChooseRecipientFragmentToSpecifyAmountFragment(
+                    nm
+                )
             navCon.navigate(action)
         }
         binding.button5.setOnClickListener { navCon.popBackStack() }

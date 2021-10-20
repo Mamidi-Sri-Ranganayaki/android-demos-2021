@@ -11,4 +11,15 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name">Name</string>
+    <string name="recipient">Recipient</string>
+    <string name="cancel">Cancel</string>
+    <string name="textview">TextView</string>
+    <string name="back">Back</string>
+    <string name="view_txn">View Txn</string>
+    <string name="view_balance">View Balance</string>
+    <string name="send_money">Send Money</string>
+    <string name="amount">Amount</string>
+    <string name="send">Send</string>
+    <string name="account_balance_is_inr_10000">Account Balance is INR.10000</string>
 </resources>

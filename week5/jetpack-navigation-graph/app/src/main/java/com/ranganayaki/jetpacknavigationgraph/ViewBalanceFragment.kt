@@ -9,7 +9,7 @@ import com.ranganayaki.jetpacknavigationgraph.databinding.FragmentViewBalanceBin
 
 class ViewBalanceFragment : Fragment() {
 
-    private lateinit var binding : FragmentViewBalanceBinding
+    private lateinit var binding: FragmentViewBalanceBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,

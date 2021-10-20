@@ -11,9 +11,9 @@ import com.ranganayaki.jetpacknavigationgraph.databinding.FragmentConfirmationBi
 
 class ConfirmationFragment : Fragment() {
 
-    private val args : ConfirmationFragmentArgs by navArgs()
+    private val args: ConfirmationFragmentArgs by navArgs()
 
-    private lateinit var binding : FragmentConfirmationBinding
+    private lateinit var binding: FragmentConfirmationBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,

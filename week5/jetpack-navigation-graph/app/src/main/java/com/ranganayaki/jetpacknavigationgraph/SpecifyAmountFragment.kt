@@ -11,8 +11,8 @@ import com.ranganayaki.jetpacknavigationgraph.databinding.FragmentSpecifyAmountB
 
 class SpecifyAmountFragment : Fragment() {
 
-    private lateinit var binding : FragmentSpecifyAmountBinding
-    private val args : SpecifyAmountFragmentArgs by navArgs()
+    private lateinit var binding: FragmentSpecifyAmountBinding
+    private val args: SpecifyAmountFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,7 +41,11 @@ class SpecifyAmountFragment : Fragment() {
             val nm = args.nm
             val amt = binding.editTextTextPersonName2.text.toString().toInt()
 
-            val action = SpecifyAmountFragmentDirections.actionSpecifyAmountFragmentToConfirmationFragment(nm, amt)
+            val action =
+                SpecifyAmountFragmentDirections.actionSpecifyAmountFragmentToConfirmationFragment(
+                    nm,
+                    amt
+                )
             navCon.navigate(action)
         }
 
