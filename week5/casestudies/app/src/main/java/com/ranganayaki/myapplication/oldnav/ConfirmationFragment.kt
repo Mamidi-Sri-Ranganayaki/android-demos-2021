@@ -22,14 +22,13 @@ class ConfirmationFragment : Fragment() {
             false
         )
 
-        binding.textView7.text = """
+        binding.textView6.text = """
             You have sent INR.${arguments?.getInt(KEY_AMOUNT)} to
             ${arguments?.getString(SpecifyAmountFragment.KEY_RECIPIENT)}
         """.trimIndent()
 
         binding.textView7.setOnClickListener {
-
-
+            (requireActivity() as OldNavActivity).goToMainFragment()
         }
 
         return binding.root
