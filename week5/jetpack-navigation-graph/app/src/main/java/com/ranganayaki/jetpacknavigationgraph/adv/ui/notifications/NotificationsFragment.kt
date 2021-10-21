@@ -8,8 +8,6 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-//import com.ranganayaki.jetpacknavigationgraph.adv.R
-//import com.ranganayaki.jetpacknavigationgraph.adv.databinding.FragmentNotificationsBinding
 import com.ranganayaki.jetpacknavigationgraph.databinding.FragmentNotificationsBinding
 
 class NotificationsFragment : Fragment() {
