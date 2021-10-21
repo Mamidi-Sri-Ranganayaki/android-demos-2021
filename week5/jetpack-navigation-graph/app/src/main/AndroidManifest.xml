@@ -20,10 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".adv.BtnNavActivity"
             android:exported="true"
             android:label="@string/title_activity_btn_nav" />
+
 
         <activity
             android:name=".fundamentals.MainActivity"
