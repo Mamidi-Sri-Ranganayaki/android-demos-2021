@@ -11,9 +11,13 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 //import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import com.ranganayaki.composenavigation.composables.AppNavHost
+
 //import com.ranganayaki.composenavigation.ui.theme.ComposeNavigationTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,25 +26,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             val navController = rememberNavController()
-
-            NavHost(navController = navController, startDestination = "sdjjdgsxg" ) {
-                composable("grt") { Greeting(name = "skjdjfhsjfdhhfsdjh") }
-                composable("sdjjdgsxg") { Profile(navCon = navController) }
-            }
+            AppNavHost(navController)
         }
     }
-}
-
-@Composable
-fun Profile(navCon : NavController) {
-    Column {
-        Button(onClick = { navCon.navigate("grt")  }) {
-            Text(text = "Greetings")
-        }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "sdfsadfsafasfd $name!")
 }
