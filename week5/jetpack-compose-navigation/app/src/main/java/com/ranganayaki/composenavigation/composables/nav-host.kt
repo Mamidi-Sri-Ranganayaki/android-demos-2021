@@ -9,12 +9,12 @@ import androidx.navigation.navArgument
 
 @Composable
 fun AppNavHost(
-    navController : NavHostController
+    navController :NavHostController
 ) {
 
     NavHost(
         navController = navController,
-        startDestination = "sdjjdgsxg"
+        startDestination = "data-list"
     ) {
         composable(
             route = "grt/{msg}",
@@ -27,6 +27,16 @@ fun AppNavHost(
         }
         composable("sdjjdgsxg") {
             Profile(navCon = navController)
+        }
+
+        composable("data-list" ) {
+            DataList(
+                dataItems = listOf(
+                    DataItem("Abc", "11:00", false),
+                    DataItem("Pqr", "11:30", false),
+                    DataItem("Lmn", "12:00", false)
+                )
+            )
         }
     }
 }
