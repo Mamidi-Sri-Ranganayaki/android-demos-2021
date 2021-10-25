@@ -1,4 +1,4 @@
-package com.ranganayaki.dihiltintro
+package com.ranganayaki.dihiltintro.hiltbasics
 
 import androidx.fragment.app.Fragment
 
