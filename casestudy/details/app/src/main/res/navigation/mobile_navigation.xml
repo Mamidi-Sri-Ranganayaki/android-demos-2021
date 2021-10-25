@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/dataEntryFragment">
+    <fragment
+        android:id="@+id/dataEntryFragment"
+        android:name="com.ranganayaki.details.DataEntryFragment"
+        android:label="fragment_data_entry"
+        tools:layout="@layout/fragment_data_entry" >
+        <action
+            android:id="@+id/action_dataEntryFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <argument
+            android:name="n"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.ranganayaki.details.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" />
+    <fragment
+        android:id="@+id/mainFragment2"
+        android:name="com.ranganayaki.details.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment2_to_dataEntryFragment"
+            app:destination="@id/dataEntryFragment" />
+    </fragment>
+</navigation>
