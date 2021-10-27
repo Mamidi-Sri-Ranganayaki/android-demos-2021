@@ -55,6 +55,7 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:2.38.1"
 
 }
+
 kapt {
     correctErrorTypes = true
 }
