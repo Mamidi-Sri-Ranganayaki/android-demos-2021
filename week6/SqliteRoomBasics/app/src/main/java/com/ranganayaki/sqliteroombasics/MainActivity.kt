@@ -1,6 +1,7 @@
 package com.ranganayaki.sqliteroombasics
 
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -9,12 +10,25 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import androidx.room.Room
+import androidx.room.RoomDatabase
 import com.ranganayaki.sqliteroombasics.databinding.ActivityMainBinding
+import com.ranganayaki.sqliteroombasics.db.Dealer
+import com.ranganayaki.sqliteroombasics.db.DealerDao
+import com.ranganayaki.sqliteroombasics.db.DealerDatabase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+
+    private lateinit var db : DealerDatabase
+    private lateinit var dealerDao: DealerDao
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,9 +42,34 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
+
+        db = Room.databaseBuilder(
+            this,
+            DealerDatabase::class.java,
+            "dealer-database"
+        ).build()
+
+        dealerDao = db.dealerDao()
+
+        val scp =   CoroutineScope(Job() + Dispatchers.IO)
+
         binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+
+            val dlr = Dealer(
+                dlNm = "pqr",
+                isActive = false,
+                mobile = "274724425",
+                period = 10
+            )
+            scp.launch {
+                dealerDao.createNewDealer(dlr)
+            }
+
+            scp.launch {
+                dealerDao.findAllDealers().forEach { dl ->
+                    Log.i("@ani", "${dl.id} ${dl.dlNm}, ${dl.mobile}, ${dl.isActive}, ${dl.period} ")
+                }
+            }
         }
     }
 

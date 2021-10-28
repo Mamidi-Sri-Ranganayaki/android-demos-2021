@@ -9,7 +9,5 @@ import androidx.room.RoomDatabase
     version = 1
 )
 abstract class DealerDatabase : RoomDatabase() {
-
     abstract fun dealerDao() : DealerDao
-
 }
